@@ -1,0 +1,348 @@
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+      box-sizing: border-box;
+  }
+
+  /* Remove default margin */
+  * {
+      margin: 0;
+      padding: 0;
+      font: inherit;
+  }
+
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  ul[role="list"],
+  ol[role="list"] {
+      list-style: none;
+  }
+
+  /* Set core root defaults */
+  html:focus-within {
+      scroll-behavior: smooth;
+  }
+
+  body,
+  html {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+  }
+
+  /* Set core body defaults */
+  body {
+      text-rendering: optimizeSpeed;
+      line-height: 1.5;
+  }
+
+  /* A elements that don't have a class get default styles */
+  a:not([class]) {
+      text-decoration-skip-ink: auto;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture,
+  svg {
+      width: 100%;
+      display: block;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+      font: inherit;
+  }
+
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+      html:focus-within {
+          scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+      }
+  }
+
+  /* utility classes */
+
+  .container {
+      --max-width: 1280px;
+      --padding: 1rem;
+      width: min(var(--max-width), 100% - (var(--padding) *2));
+      margin-inline: auto;
+  }
+
+  .my1 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+
+  .my2 {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+  }
+
+  .my3 {
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+  }
+
+
+  /* general styling */
+
+  body {
+      font-size: var(--fs-body);
+      font-family: var(--ff-body);
+      color: var(--crl-primary-400);
+  }
+
+  nav ul li a:hover {
+      color: rgb(70, 0, 247);
+
+  }
+
+  header {
+      background-image: url(../images/gallery.png);
+      background-size: cover;
+      background-position: center 90%;
+      background-repeat: no-repeat;
+      height: 100vh;
+  }
+
+  header .flex-header {
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.557);
+      padding: 1rem 2rem;
+  }
+
+  header nav ul {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+  }
+
+  header nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+  }
+
+  header h1 {
+      text-align: center;
+      font-size: 8rem;
+      color: #fff;
+      line-height: 95vh;
+  }
+
+  @media screen and (max-width: 767px) {
+      header h1 {
+          font-size: 5rem;
+          line-height: 120vh;
+      }
+  }
+
+  main section.img-gallery {
+      background-image: url(../images/bg-gallery.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  main section.img-gallery h2 {
+      text-align: center;
+      color: #fff;
+      padding: 5rem 2rem;
+      width: 30%;
+      margin-inline: auto;
+
+
+  }
+
+  main section.img-gallery .many {
+      background-color: #fff;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 100%);
+      gap: 2rem;
+      object-fit: cover;
+      padding: 2rem;
+  }
+
+  main section.img-gallery .many img {
+      border-color: black;
+      border-width: 0.5rem;
+      border-style: double;
+  }
+
+  main section.img-gallery .many .group-img {
+      display: grid;
+      gap: 2rem;
+      object-fit: cover;
+      height: 100%;
+
+  }
+
+  main section.img-gallery .many img.item1 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+  }
+
+  main section.img-gallery .many img.item2 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  main section.img-gallery .many .group-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+  }
+
+  @media screen and (max-width: 767px) {
+      main section.img-gallery .many {
+          background-color: #fff;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(4, 50%);
+          grid-auto-flow: dense;
+          gap: 2rem;
+          object-fit: cover;
+      }
+
+      main section.img-gallery .many img.item2 {
+          grid-column: 1/3;
+          height: 80%;
+          align-self: self-end;
+      }
+
+      main section.img-gallery h2 {
+
+          width: 90%;
+          margin-inline: auto;
+
+
+      }
+
+      h1 {
+          font-size: 4rem;
+      }
+
+  }
+
+  main .videos {
+      background-image: url(../images/bg-video.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+
+  main .videos h2 {
+      text-align: center;
+      color: #fff;
+      padding: 3rem 2rem;
+      margin-inline: auto;
+  }
+
+  main .videos .video-gallery {
+      width: 70%;
+      margin-inline: auto;
+  }
+
+  main .videos .video-gallery img {
+      margin-bottom: 5%;
+  }
+
+
+  footer {
+      width: 100%;
+
+  }
+
+  footer {
+      background-image: url(../images/footer.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+
+  footer img {
+      width: auto;
+  }
+
+  .FOOTER {
+      color: white;
+      background-color: rgba(0, 0, 0, 0.413);
+  }
+
+  .list ul,
+  li {
+      text-decoration: none;
+      font-family: Poppins;
+      font-size: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      row-gap: 20%;
+      word-spacing: 2rem;
+  }
+
+  .list {
+      padding-bottom: 5%;
+      padding-top: 5%;
+  }
+
+  ul {
+      height: 80%;
+  }
+
+  .footer {
+      row-gap: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+  }
+
+  .media {
+      display: flex;
+      flex-direction: row;
+      row-gap: 5%;
+      justify-content: space-evenly;
+      width: 30%;
+      height: 60%;
+  }
+
+  .bottom {
+      height: 10%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .bottom img {
+      margin-bottom: 1%;
+  }
+
+  .bottom p {
+      width: 60%;
+      margin-top: 2%;
+      font-size: 0.5rem;
+      font-family: Poppins;
+  }
